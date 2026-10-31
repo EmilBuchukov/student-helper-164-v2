@@ -1,0 +1,73 @@
+/* Design tokens (see docs/design.md). Values are "R G B" channels so Tailwind can apply alpha. */
+:root {
+    color-scheme: light;
+    --canvas: 251 246 236;
+    --surface: 255 253 248;
+    --sunken: 244 236 221;
+    --line: 232 221 203;
+    --line-strong: 211 197 174;
+    --ink: 26 20 18;
+    --ink-muted: 79 68 58;
+    --ink-subtle: 106 93 78;
+
+    --primary: 170 21 27;
+    --primary-hover: 142 17 23;
+    --on-primary: 255 255 255;
+    --primary-ink: 170 21 27;
+    --primary-soft: 251 228 226;
+
+    --accent: 241 191 0;
+    --on-accent: 26 20 18;
+    --accent-soft: 255 243 196;
+    --accent-ink: 107 77 0;
+
+    --success: 47 107 58;
+    --success-soft: 230 242 227;
+    --warning: 138 75 0;
+    --warning-soft: 252 239 217;
+    --danger: 179 38 30;
+    --danger-soft: 253 231 228;
+    --info: 29 92 128;
+    --info-soft: 227 238 245;
+
+    --focus: 170 21 27;
+    --shadow: 74 52 30;
+
+    --ease-out: cubic-bezier(0.2, 0, 0, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.dark {
+    color-scheme: dark;
+    --canvas: 23 18 15;
+    --surface: 33 26 22;
+    --sunken: 42 34 29;
+    --line: 58 48 42;
+    --line-strong: 84 71 61;
+    --ink: 245 238 227;
+    --ink-muted: 205 191 174;
+    --ink-subtle: 168 154 139;
+
+    --primary: 224 71 63;
+    --primary-hover: 234 97 89;
+    --on-primary: 26 7 7;
+    --primary-ink: 242 139 130;
+    --primary-soft: 58 25 23;
+
+    --accent: 241 191 0;
+    --on-accent: 26 20 18;
+    --accent-soft: 58 47 12;
+    --accent-ink: 245 207 61;
+
+    --success: 134 208 148;
+    --success-soft: 28 46 31;
+    --warning: 240 177 90;
+    --warning-soft: 53 38 15;
+    --danger: 255 138 128;
+    --danger-soft: 59 23 20;
+    --info: 140 196 230;
+    --info-soft: 23 40 51;
+
+    --focus: 241 191 0;
+    --shadow: 0 0 0;
+}

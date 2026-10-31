@@ -1,0 +1,11 @@
+email,grade,letter
+ivan.ivanov@example.com,8,А
+maria.georgieva@example.com,8,Б
+petar.petrov@example.com,9,А
+elena.koleva@example.com,10,Б
+georgi.stoyanov@example.com,11,А
+viktoria.hristova@example.com,12,Б
+ivan.ivanov@example.com,8,А
+not-an-email,10,Б
+kaloyan.marinov@example.com,13,А
+simona.ilieva@example.com,10,Ж
