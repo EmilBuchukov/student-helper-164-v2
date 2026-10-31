@@ -1,0 +1,123 @@
+@import './fonts.css';
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply bg-canvas text-ink antialiased;
+        font-family: theme('fontFamily.sans');
+        -webkit-tap-highlight-color: transparent;
+        text-rendering: optimizeLegibility;
+    }
+    body {
+        @apply min-h-screen bg-canvas text-base leading-relaxed;
+    }
+    h1, h2, h3, h4 {
+        @apply text-balance;
+    }
+    ::selection {
+        background: rgb(var(--accent) / 0.45);
+        color: rgb(var(--ink));
+    }
+    :focus-visible {
+        outline: 2px solid rgb(var(--focus));
+        outline-offset: 2px;
+    }
+    [type='date']::-webkit-calendar-picker-indicator,
+    [type='datetime-local']::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+    .dark [type='date']::-webkit-calendar-picker-indicator,
+    .dark [type='datetime-local']::-webkit-calendar-picker-indicator {
+        filter: invert(0.85);
+    }
+}
+
+@layer components {
+    .kicker {
+        @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary-ink;
+    }
+    .kicker::before {
+        content: '';
+        @apply inline-block h-0.5 w-5 bg-accent;
+    }
+    .prose-body {
+        @apply max-w-[68ch] whitespace-pre-line break-words text-[1.0625rem] leading-[1.7] text-ink;
+    }
+    .link {
+        @apply font-medium text-primary-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:decoration-primary-ink;
+    }
+    .rojigualda {
+        background: linear-gradient(
+            to right,
+            rgb(170 21 27) 0 25%,
+            rgb(241 191 0) 25% 75%,
+            rgb(170 21 27) 75% 100%
+        );
+    }
+}
+
+/* Inertia progress bar in brand red. */
+#nprogress .bar {
+    background: rgb(var(--primary)) !important;
+    height: 3px !important;
+}
+#nprogress .peg {
+    box-shadow: 0 0 10px rgb(var(--primary)), 0 0 5px rgb(var(--primary)) !important;
+}
+
+/* Page enter fallback + View Transitions. */
+@keyframes page-enter {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+}
+.page-enter {
+    animation: page-enter 280ms var(--ease-out) both;
+}
+::view-transition-old(root) {
+    animation: 150ms var(--ease-in) both vt-fade-out;
+}
+::view-transition-new(root) {
+    animation: 280ms var(--ease-out) both page-enter;
+}
+@keyframes vt-fade-out {
+    to { opacity: 0; }
+}
+
+/* List transitions (TransitionGroup name="list"). */
+.list-enter-active,
+.list-leave-active {
+    transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+.list-enter-from {
+    opacity: 0;
+    transform: translateY(8px);
+}
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(-8px);
+}
+.list-move {
+    transition: transform 280ms var(--ease-out);
+}
+.list-leave-active {
+    position: absolute;
+    inset-inline: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+        scroll-behavior: auto !important;
+    }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}

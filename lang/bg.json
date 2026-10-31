@@ -1,0 +1,10 @@
+{
+    "Forbidden": "Нямаш достъп до тази страница",
+    "Not Found": "Страницата не е намерена",
+    "Page Expired": "Страницата е изтекла",
+    "Payment Required": "Изисква се плащане",
+    "Server Error": "Грешка в сървъра",
+    "Service Unavailable": "Услугата е недостъпна",
+    "Too Many Requests": "Твърде много заявки",
+    "Unauthorized": "Неоторизиран достъп"
+}
