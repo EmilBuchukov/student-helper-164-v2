@@ -63,12 +63,12 @@ const submit = () => {
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div>
                             <InputLabel for="starts_at" :value="$t('events.starts_at')" />
-                            <TextInput id="starts_at" v-model="form.starts_at" type="datetime-local" class="mt-1 block w-full" required />
+                            <TextInput id="starts_at" v-model="form.starts_at" type="datetime-local" lang="en-GB" class="mt-1 block w-full" required />
                             <InputError class="mt-2" :message="form.errors.starts_at" />
                         </div>
                         <div>
                             <InputLabel for="ends_at" :value="$t('events.ends_at')" />
-                            <TextInput id="ends_at" v-model="form.ends_at" type="datetime-local" class="mt-1 block w-full" />
+                            <TextInput id="ends_at" v-model="form.ends_at" type="datetime-local" lang="en-GB" class="mt-1 block w-full" />
                             <InputError class="mt-2" :message="form.errors.ends_at" />
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const submit = () => {
                     </div>
                     <div>
                         <InputLabel for="description" :value="$t('events.description')" />
-                        <textarea id="description" v-model="form.description" rows="6" maxlength="5000" class="mt-1 block w-full rounded border-line-strong focus:border-primary-ink focus:ring-focus/30" />
+                        <textarea id="description" v-model="form.description" rows="6" maxlength="5000" class="mt-1 block w-full rounded border-line-strong bg-surface text-ink focus:border-primary-ink focus:ring-focus/30" />
                         <InputError class="mt-2" :message="form.errors.description" />
                     </div>
                     <PrimaryButton :disabled="form.processing">{{ editing ? $t('common.save') : $t('common.create') }}</PrimaryButton>

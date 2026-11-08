@@ -51,7 +51,7 @@ const submit = () => {
                     </div>
                     <div>
                         <InputLabel for="description" :value="$t('clubs.description')" />
-                        <textarea id="description" v-model="form.description" rows="6" maxlength="5000" class="mt-1 block w-full rounded border-line-strong focus:border-primary-ink focus:ring-focus/30" />
+                        <textarea id="description" v-model="form.description" rows="6" maxlength="5000" class="mt-1 block w-full rounded border-line-strong bg-surface text-ink focus:border-primary-ink focus:ring-focus/30" />
                         <InputError class="mt-2" :message="form.errors.description" />
                     </div>
                     <div>

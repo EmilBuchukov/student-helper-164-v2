@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue';
 import { fieldClasses } from '@/Components/ui/variants';
 
+defineOptions({ inheritAttrs: false });
 const model = defineModel({ type: [String, Number, null], required: true });
 const input = ref(null);
 
@@ -15,5 +16,5 @@ defineExpose({ focus: () => input.value.focus() });
 </script>
 
 <template>
-    <input :class="[fieldClasses, 'h-11']" v-model="model" ref="input" />
+    <input v-bind="$attrs" :class="[fieldClasses, 'h-11']" v-model="model" ref="input" />
 </template>

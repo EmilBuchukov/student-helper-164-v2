@@ -68,7 +68,7 @@ const submit = () => {
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div>
                             <InputLabel for="exam_date" :value="$t('exams.date')" />
-                            <TextInput id="exam_date" v-model="form.exam_date" type="date" class="mt-1 block w-full" required />
+                            <TextInput id="exam_date" v-model="form.exam_date" type="date" lang="en-GB" class="mt-1 block w-full" required />
                             <InputError class="mt-2" :message="form.errors.exam_date" />
                         </div>
                         <div>
@@ -95,7 +95,7 @@ const submit = () => {
                             v-model="form.description"
                             rows="4"
                             maxlength="5000"
-                            class="mt-1 block w-full rounded border-line-strong focus:border-primary-ink focus:ring-focus/30"
+                            class="mt-1 block w-full rounded border-line-strong bg-surface text-ink focus:border-primary-ink focus:ring-focus/30"
                         />
                         <InputError class="mt-2" :message="form.errors.description" />
                     </div>

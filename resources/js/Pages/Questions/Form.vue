@@ -60,7 +60,7 @@ const submit = () => {
                             rows="8"
                             maxlength="10000"
                             required
-                            class="mt-1 block w-full rounded border-line-strong focus:border-primary-ink focus:ring-focus/30"
+                            class="mt-1 block w-full rounded border-line-strong bg-surface text-ink focus:border-primary-ink focus:ring-focus/30"
                             :placeholder="$t('questions.body_placeholder')"
                         />
                         <InputError class="mt-2" :message="form.errors.body" />
